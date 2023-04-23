@@ -1,5 +1,15 @@
+import { useState } from 'react';
+import Navbar from './components/layouts/Navbar';
+import useMediaQuery from './custom-hooks/useMediaQuery';
+
 function App() {
-    return <h1 className="text-2xl">Hello Ujjal</h1>;
+    const [selectedPage, setSelectedPage] = useState('home');
+    const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
+    return (
+        <div className="bg-blue-950">
+            <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        </div>
+    );
 }
 
 export default App;
